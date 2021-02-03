@@ -41,11 +41,11 @@ h1 {
 .card {
     padding: 10px 25px 10px 25px;
     border-radius: 10px;
-    background: #553c4e;
+    background: #2E1A47;
     width: 85vw;
     color: #fff;
     display: inline-block;
-    box-shadow: 2px 2px 1px 0px #330835;
+    /* box-shadow: 2px 2px 1px 0px #330835; */
 }
 
 .card:hover {
@@ -55,7 +55,7 @@ h1 {
 
 .clock {
     display: inline;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Maven Pro', sans-serif;
     font-size: 2em;
    
 }
@@ -100,8 +100,8 @@ h1 {
         <div class="time" id="hour"></div>
         <div class="colon">:</div>
         <div class="time" id="min"></div>
-        <div class="colon">:</div>
-        <div class="time" id="sec"></div>
+        <!-- <div class="colon">:</div>
+        <div class="time" id="sec"></div> -->
       </div>
     </div>
     
@@ -121,23 +121,29 @@ var hour = zeros(twelveHour(today.getHours()));
 var minutes = zeros(today.getMinutes());
 var seconds = zeros(today.getSeconds());
 if(today.getHours() >=12){
-    seconds+=" pm"
+    minutes+=" pm"
 }
 else{
-    seconds+=" am"
+    minutes+=" am"
 }
 hrs = today.getHours();
-if (hrs < 12)
-        greet = 'Good Morning  ';
-    else if (hrs >= 12 && hrs <= 17)
-        greet = 'Good Afternoon ';
-    else if (hrs >= 17 && hrs <= 24)
-        greet = 'Good Evening  ';
+if (hrs < 8)
+        greet = '\"I am Stronger than my Strongest Excuse\"  ';
+        else if (hrs >= 8 && hrs <= 11)
+        greet = '\"Good Morning, Top Gear Time\" ';
+        else if (hrs >= 11 && hrs <= 14)
+        greet = '\"Happy Noon, Push more\" ';
+    else if (hrs >= 14 && hrs <= 17)
+        greet = '\"Good Afternoon, Take it Slow\" ';
+    else if (hrs >= 17 && hrs <= 20)
+        greet = '\"Good Evening, Lets Wrap it up in Style\"  ';
+        else if (hrs >= 20 && hrs <= 24)
+        greet = '\"Good Night, Let\'s make Tomorrow Smooth\"  ';
 // console.log(today.toLocaleTimeString());
 document.getElementById('greet').innerHTML = greet;
 document.getElementById('hour').innerHTML = hour;
 document.getElementById('min').innerHTML = minutes;
-document.getElementById('sec').innerHTML = seconds;
+// document.getElementById('sec').innerHTML = seconds;
 }
 
 function twelveHour(hour) {
